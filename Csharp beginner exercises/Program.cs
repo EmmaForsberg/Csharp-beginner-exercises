@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Csharp_beginner_exercises
 {
@@ -7,7 +6,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            enterNumberorOk();
+            randomNumber();
             Console.Read();
         }
 
@@ -116,5 +115,42 @@ namespace Csharp_beginner_exercises
             Console.WriteLine("Sum of all number is " + allnumberssum);
         }
 
+        public static void factorialNumber()
+        {
+            Console.WriteLine("Enter a number");
+            var input = int.Parse(Console.ReadLine());
+
+            var result = 1;
+
+            for (int i = input; i > 0; i--)
+            {
+                result *= i;
+
+            }
+            Console.WriteLine("Factorial is {0}", result);
+        }
+
+        public static void randomNumber()
+        {
+            Random random = new Random();
+            var randomnumber = random.Next(1, 10);
+
+            int quesses = 0;
+
+            while (quesses <4)
+            {
+                Console.WriteLine("Guess the number between 1 and 10.");
+                var myguess = int.Parse(Console.ReadLine());
+
+                if (myguess == randomnumber)
+                {
+                    Console.WriteLine("You quess right");
+                    break;
+                }
+
+                Console.WriteLine("Wrong");
+                quesses++;
+            }
+        }
     }
 }
