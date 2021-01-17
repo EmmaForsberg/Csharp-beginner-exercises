@@ -10,7 +10,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            numberValidation();
+            displayMaximum();
             Console.Read();
         }
 
@@ -27,6 +27,24 @@ namespace Csharp_beginner_exercises
             else
             {
                 Console.WriteLine("Unvalid");
+            }
+        }
+
+        public static void displayMaximum()
+        {
+            Console.WriteLine("Enter first number:");
+            var firstnumber = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter second number:");
+            var secondnumber = int.Parse(Console.ReadLine());
+
+            if (firstnumber > secondnumber)
+            {
+                Console.WriteLine("This number is largest: " + firstnumber);
+            }
+            else
+            {
+                Console.WriteLine("This number is largest: " + secondnumber);
             }
         }
     }
