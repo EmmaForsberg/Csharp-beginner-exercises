@@ -115,5 +115,6 @@ namespace Csharp_beginner_exercises
             }
             Console.WriteLine("Sum of all number is " + allnumberssum);
         }
+
     }
 }
