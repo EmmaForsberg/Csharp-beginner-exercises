@@ -10,7 +10,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            displayMaximum();
+            determineImage();
             Console.Read();
         }
 
@@ -20,7 +20,7 @@ namespace Csharp_beginner_exercises
             Console.WriteLine("Enter a number between 1 and 10");
             var number = int.Parse(Console.ReadLine());
 
-            if (number >= 1 && number <=10)
+            if (number >= 1 && number <= 10)
             {
                 Console.WriteLine("Valid");
             }
@@ -38,14 +38,23 @@ namespace Csharp_beginner_exercises
             Console.WriteLine("Enter second number:");
             var secondnumber = int.Parse(Console.ReadLine());
 
-            if (firstnumber > secondnumber)
-            {
-                Console.WriteLine("This number is largest: " + firstnumber);
-            }
-            else
-            {
-                Console.WriteLine("This number is largest: " + secondnumber);
-            }
+            var biggestnumber =firstnumber > secondnumber ? firstnumber : secondnumber;
+
+            Console.WriteLine("This number is largest: " + biggestnumber);  
         }
+
+        public static void determineImage()
+        {
+            Console.WriteLine("Enter height");
+            var height = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter width");
+            var width = int.Parse(Console.ReadLine());
+
+            var result = height > width ? "Portrait" : "Landscape";
+
+            Console.WriteLine("The image is a "+ result);
+        }
+           
     }
 }
