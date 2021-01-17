@@ -10,7 +10,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            speedCamera();
+            countNumbers();
             Console.Read();
         }
 
@@ -82,6 +82,21 @@ namespace Csharp_beginner_exercises
                 }
             }
 
+        }
+
+        public static void countNumbers()
+        {
+            int count = 0;
+
+            for (int i = 1; i <= 100; i++)
+            {
+
+                if (i%3==0)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine("It is {0} numbers that are divided by 3 with no remainder.",count);
         }
     }
 }
