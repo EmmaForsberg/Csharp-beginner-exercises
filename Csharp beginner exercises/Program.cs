@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Csharp_beginner_exercises
 {
@@ -10,10 +7,9 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            speedCamera();
+            enterNumberorOk();
             Console.Read();
         }
-
 
         public static void numberValidation()
         {
@@ -38,9 +34,9 @@ namespace Csharp_beginner_exercises
             Console.WriteLine("Enter second number:");
             var secondnumber = int.Parse(Console.ReadLine());
 
-            var biggestnumber =firstnumber > secondnumber ? firstnumber : secondnumber;
+            var biggestnumber = firstnumber > secondnumber ? firstnumber : secondnumber;
 
-            Console.WriteLine("This number is largest: " + biggestnumber);  
+            Console.WriteLine("This number is largest: " + biggestnumber);
         }
 
         public static void determineImage()
@@ -53,9 +49,9 @@ namespace Csharp_beginner_exercises
 
             var result = height > width ? "Portrait" : "Landscape";
 
-            Console.WriteLine("The image is a "+ result);
+            Console.WriteLine("The image is a " + result);
         }
-           
+
         public static void speedCamera()
         {
             Console.WriteLine("Enter speed limit");
@@ -72,16 +68,52 @@ namespace Csharp_beginner_exercises
             {
                 var demeritpoints = (carspeed - speedlimit) / 5;
 
-                if (demeritpoints >12)
+                if (demeritpoints > 12)
                 {
                     Console.WriteLine("You have {0} demeritpoints. Your license is suspended.", demeritpoints);
                 }
                 else
                 {
-                    Console.WriteLine("Demeripoints is " +demeritpoints);
+                    Console.WriteLine("Demeripoints is " + demeritpoints);
                 }
             }
 
+        }
+
+        public static void countNumbers()
+        {
+            int count = 0;
+
+            for (int i = 1; i <= 100; i++)
+            {
+
+                if (i % 3 == 0)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine("It is {0} numbers that are divided by 3 with no remainder.", count);
+        }
+
+        public static void enterNumberorOk()
+        {
+            int allnumberssum = 0;
+
+            while (true)
+            {
+                Console.WriteLine("Enter a number or if you want to exit just enter ok");
+                var input = Console.ReadLine();
+
+                if (input == "ok")
+                {
+                    break;
+                }
+                else
+                {
+                    allnumberssum += Convert.ToInt32(input);
+                }
+            }
+            Console.WriteLine("Sum of all number is " + allnumberssum);
         }
     }
 }
