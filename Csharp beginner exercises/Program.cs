@@ -10,7 +10,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            determineImage();
+            speedCamera();
             Console.Read();
         }
 
@@ -56,5 +56,32 @@ namespace Csharp_beginner_exercises
             Console.WriteLine("The image is a "+ result);
         }
            
+        public static void speedCamera()
+        {
+            Console.WriteLine("Enter speed limit");
+            var speedlimit = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("What is your speed?");
+            var carspeed = int.Parse(Console.ReadLine());
+
+            if (carspeed < speedlimit)
+            {
+                Console.WriteLine("OK");
+            }
+            else
+            {
+                var demeritpoints = (carspeed - speedlimit) / 5;
+
+                if (demeritpoints >12)
+                {
+                    Console.WriteLine("You have {0} demeritpoints. Your license is suspended.", demeritpoints);
+                }
+                else
+                {
+                    Console.WriteLine("Demeripoints is " +demeritpoints);
+                }
+            }
+
+        }
     }
 }
