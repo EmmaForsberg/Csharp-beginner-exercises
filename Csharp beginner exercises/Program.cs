@@ -6,7 +6,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            randomNumber();
+            largestNumber();
             Console.Read();
         }
 
@@ -151,6 +151,27 @@ namespace Csharp_beginner_exercises
                 Console.WriteLine("Wrong");
                 quesses++;
             }
+        }
+
+        public static void largestNumber()
+        {
+            Console.WriteLine("Enter some numbers separated by a ',' ");
+            var input = Console.ReadLine();
+
+            var numberarray = input.Split(',');
+
+            int[] newnumbarray = Array.ConvertAll(numberarray, int.Parse);
+
+            int largestnumber = 0;
+
+            foreach (var item in newnumbarray)
+            {
+                if (largestnumber < item)
+                {
+                    largestnumber = item;
+                }       
+            }
+            Console.WriteLine("Largest number is " + largestnumber);
         }
     }
 }
