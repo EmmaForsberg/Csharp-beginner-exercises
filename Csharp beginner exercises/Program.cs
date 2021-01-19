@@ -7,7 +7,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            facebookLikes();
+            reversedName();
             Console.Read();
         }
 
@@ -204,6 +204,23 @@ namespace Csharp_beginner_exercises
                 Console.WriteLine(names[0] + ", " + names[1] + " and " + (names.Count -2) +" other liked your post");
             }
 
+        }
+
+        public static void reversedName()
+        {
+            Console.WriteLine("Enter your name");
+            var name = Console.ReadLine();
+
+            char[] reversename = name.ToCharArray();
+            Array.Reverse(reversename);
+            string newnewname = "";
+           
+            foreach (var item in reversename)
+            {
+                newnewname += item;
+            }
+
+            Console.WriteLine(newnewname);
         }
     }
 }
