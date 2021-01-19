@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Csharp_beginner_exercises
 {
@@ -6,7 +7,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            largestNumber();
+            facebookLikes();
             Console.Read();
         }
 
@@ -172,6 +173,37 @@ namespace Csharp_beginner_exercises
                 }       
             }
             Console.WriteLine("Largest number is " + largestnumber);
+        }
+
+        public static void facebookLikes()
+        {
+            List<string> names = new List<string>();
+
+            while (true)
+            {
+                Console.WriteLine("Enter name");
+                var input = Console.ReadLine();
+
+                if (input == "")
+                {
+                    break;
+                }
+                names.Add(input);
+            }
+
+            if (names.Count ==1)
+            {
+                Console.WriteLine(names[0] + " liked your post");
+            }
+            else if (names.Count == 2)
+            {
+                Console.WriteLine(names[0] + ", " + names[1] + " liked your post");
+            }
+            else
+            {
+                Console.WriteLine(names[0] + ", " + names[1] + " and " + (names.Count -2) +" other liked your post");
+            }
+
         }
     }
 }
