@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Csharp_beginner_exercises
 {
@@ -7,7 +8,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            uniqueFive();
+            numbOrQuit();
             Console.Read();
         }
 
@@ -248,6 +249,33 @@ namespace Csharp_beginner_exercises
             {
                 Console.WriteLine(item);
             }
+        }
+
+        public static void numbOrQuit()
+        {
+            List<int> mynumbers = new List<int>();
+            while (true)
+            {
+                Console.WriteLine("Enter a number or type quit to exit");
+                var input = Console.ReadLine();
+
+                if (input == "exit")
+                {
+                    break;
+                }
+
+                var number = int.Parse(input);
+                mynumbers.Add(number);
+            }
+
+            List<int> uniquenumb = mynumbers.Distinct().ToList();
+
+            foreach (var item in uniquenumb)
+            {
+
+                Console.WriteLine(item);
+            }
+
         }
     }
 }
