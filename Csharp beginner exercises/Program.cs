@@ -7,7 +7,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            reversedName();
+            uniqueFive();
             Console.Read();
         }
 
@@ -138,7 +138,7 @@ namespace Csharp_beginner_exercises
 
             int quesses = 0;
 
-            while (quesses <4)
+            while (quesses < 4)
             {
                 Console.WriteLine("Guess the number between 1 and 10.");
                 var myguess = int.Parse(Console.ReadLine());
@@ -170,7 +170,7 @@ namespace Csharp_beginner_exercises
                 if (largestnumber < item)
                 {
                     largestnumber = item;
-                }       
+                }
             }
             Console.WriteLine("Largest number is " + largestnumber);
         }
@@ -191,7 +191,7 @@ namespace Csharp_beginner_exercises
                 names.Add(input);
             }
 
-            if (names.Count ==1)
+            if (names.Count == 1)
             {
                 Console.WriteLine(names[0] + " liked your post");
             }
@@ -201,7 +201,7 @@ namespace Csharp_beginner_exercises
             }
             else
             {
-                Console.WriteLine(names[0] + ", " + names[1] + " and " + (names.Count -2) +" other liked your post");
+                Console.WriteLine(names[0] + ", " + names[1] + " and " + (names.Count - 2) + " other liked your post");
             }
 
         }
@@ -214,13 +214,40 @@ namespace Csharp_beginner_exercises
             char[] reversename = name.ToCharArray();
             Array.Reverse(reversename);
             string newnewname = "";
-           
+
             foreach (var item in reversename)
             {
                 newnewname += item;
             }
 
             Console.WriteLine(newnewname);
+        }
+
+        public static void uniqueFive()
+        {
+            List<int> mynumbers = new List<int>();
+
+            int count = 0;
+
+            while (count < 5)
+            {
+                Console.WriteLine("Enter five unique numbers");
+                var input = int.Parse(Console.ReadLine());
+
+                if (mynumbers.Contains(input))
+                {
+                    continue;
+                }
+
+                mynumbers.Add(input);
+                count++;
+            }
+            mynumbers.Sort();
+
+            foreach (var item in mynumbers)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
