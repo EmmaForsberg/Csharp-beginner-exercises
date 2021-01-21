@@ -8,7 +8,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            numbOrQuit();
+            overFiveNumbers();
             Console.Read();
         }
 
@@ -277,5 +277,30 @@ namespace Csharp_beginner_exercises
             }
 
         }
-    }
+
+        public static void overFiveNumbers()
+        {
+            while (true)
+            {
+                Console.WriteLine("Enter some numers separated by a , ");
+                var input = Console.ReadLine();
+
+                var numbers = input.Split(',');
+
+                var mynumbers = Array.ConvertAll(numbers, int.Parse);
+
+                if (mynumbers != null && mynumbers.Length >= 5)
+                {
+                    Array.Sort(mynumbers);
+
+                    for (int i = 0; i <= 2; i++)
+                    {
+                        Console.WriteLine(mynumbers[i]);
+                    }
+                    break;
+                }
+                continue;
+            }
+        }
+    }   
 }
