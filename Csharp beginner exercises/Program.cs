@@ -8,7 +8,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            overFiveNumbers();
+            consecutiveOrNot();
             Console.Read();
         }
 
@@ -301,6 +301,37 @@ namespace Csharp_beginner_exercises
                 }
                 continue;
             }
+        }
+
+        public static void consecutiveOrNot()
+        {
+            Console.WriteLine("Enter some numbers separated by a - ");
+            var input = Console.ReadLine();
+
+            var removehyphen = input.Split('-');
+
+            var mynumbers = Array.ConvertAll(removehyphen, int.Parse);
+
+            var firstvalue = mynumbers[0];
+            bool cons = true;
+
+            for (int i = 0; i < mynumbers.Length; i++)
+            {
+                if (mynumbers[i] - i != firstvalue)
+                {
+                    cons = false;
+                    break;
+                }
+            }
+            if (cons)
+            {
+                Console.WriteLine("Consecutive");
+            }
+            else
+            {
+                Console.WriteLine("Not Consecutive");
+            }
+
         }
     }   
 }
