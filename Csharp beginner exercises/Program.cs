@@ -8,7 +8,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            consecutiveOrNot();
+            duplicateOrNot();
             Console.Read();
         }
 
@@ -333,5 +333,33 @@ namespace Csharp_beginner_exercises
             }
 
         }
-    }   
+
+        public static void duplicateOrNot()
+        {
+            while (true)
+            {
+                Console.WriteLine("Enter some numbers separated by a - ");
+                var input = Console.ReadLine();
+
+                if (input == "")
+                {
+                    break;
+                }
+
+                var removehyphen = input.Split('-');
+
+                var tonumbers = Array.ConvertAll(removehyphen, int.Parse);
+
+               var duplic = tonumbers.Distinct();
+
+                if (tonumbers.Length != duplic.Distinct().Count())
+                {
+                    Console.WriteLine("Duplicate");
+                    break;
+                }
+            }
+
+            Console.ReadLine();
+        }
+    }
 }
