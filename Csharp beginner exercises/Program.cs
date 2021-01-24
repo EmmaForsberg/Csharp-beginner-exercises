@@ -8,7 +8,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            duplicateOrNot();
+            checkTime();
             Console.Read();
         }
 
@@ -359,6 +359,27 @@ namespace Csharp_beginner_exercises
                 }
             }
 
+            Console.ReadLine();
+        }
+
+        public static void checkTime()
+        {
+            try
+            {
+                Console.WriteLine("Enter a time value");
+                var time = TimeSpan.Parse(Console.ReadLine());
+
+                if (time == null)
+                {
+                    Console.WriteLine("Invalid");
+                }
+
+                Console.WriteLine("Valid");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid time");
+            }
             Console.ReadLine();
         }
     }
