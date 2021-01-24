@@ -8,7 +8,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            checkTime();
+            PascalCase();
             Console.Read();
         }
 
@@ -381,6 +381,25 @@ namespace Csharp_beginner_exercises
                 Console.WriteLine("Invalid time");
             }
             Console.ReadLine();
+        }
+
+        public static void PascalCase()
+        {
+            Console.WriteLine("Enter some words separated by a space");
+            var words = Console.ReadLine();
+
+            var splitting = words.ToLower().Split(' ');
+            
+            var allwords = "";
+            foreach (var item in splitting)
+            {
+               var toupper = char.ToUpper(item[0]) + item.Substring(1);
+                allwords += toupper;
+                
+            }
+            Console.WriteLine(allwords);
+
+
         }
     }
 }
