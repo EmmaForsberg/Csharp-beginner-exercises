@@ -9,7 +9,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            longestWordinFile();
+            numberOfWords();
             Console.Read();
         }
 
@@ -422,7 +422,7 @@ namespace Csharp_beginner_exercises
             Console.WriteLine(count);
         }
 
-        public static void longestWordinFile()
+        public static void numberOfWords()
         {
             string path = @"C:\Users\forsb\Desktop\Customers.txt";
             var x = File.ReadAllText(path);
