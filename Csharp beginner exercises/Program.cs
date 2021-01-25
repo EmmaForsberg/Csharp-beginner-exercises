@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Csharp_beginner_exercises
@@ -8,7 +9,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            numberOfVowels();
+            longestWordinFile();
             Console.Read();
         }
 
@@ -350,7 +351,7 @@ namespace Csharp_beginner_exercises
 
                 var tonumbers = Array.ConvertAll(removehyphen, int.Parse);
 
-               var duplic = tonumbers.Distinct();
+                var duplic = tonumbers.Distinct();
 
                 if (tonumbers.Length != duplic.Distinct().Count())
                 {
@@ -389,13 +390,13 @@ namespace Csharp_beginner_exercises
             var words = Console.ReadLine();
 
             var splitting = words.ToLower().Split(' ');
-            
+
             var allwords = "";
             foreach (var item in splitting)
             {
-               var toupper = char.ToUpper(item[0]) + item.Substring(1);
+                var toupper = char.ToUpper(item[0]) + item.Substring(1);
                 allwords += toupper;
-                
+
             }
             Console.WriteLine(allwords);
 
@@ -416,6 +417,23 @@ namespace Csharp_beginner_exercises
                 {
                     count++;
                 }
+            }
+
+            Console.WriteLine(count);
+        }
+
+        public static void longestWordinFile()
+        {
+            string path = @"C:\Users\forsb\Desktop\Customers.txt";
+            var x = File.ReadAllText(path);
+
+            var words = x.Split(' ');
+
+            int count = 0;
+
+            foreach (var item in words)
+            {
+                count++;
             }
 
             Console.WriteLine(count);
