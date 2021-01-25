@@ -8,7 +8,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            PascalCase();
+            numberOfVowels();
             Console.Read();
         }
 
@@ -400,6 +400,25 @@ namespace Csharp_beginner_exercises
             Console.WriteLine(allwords);
 
 
+        }
+
+        public static void numberOfVowels()
+        {
+            Console.WriteLine("Enter a word");
+            var word = Console.ReadLine();
+
+            char[] vowels = new char[] { 'a', 'e', 'o', 'u', 'i' };
+            int count = 0;
+
+            foreach (var item in word)
+            {
+                if (vowels.Contains(item))
+                {
+                    count++;
+                }
+            }
+
+            Console.WriteLine(count);
         }
     }
 }
