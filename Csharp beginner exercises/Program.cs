@@ -9,7 +9,7 @@ namespace Csharp_beginner_exercises
     {
         static void Main(string[] args)
         {
-            numberOfWords();
+            longestWord();
             Console.Read();
         }
 
@@ -437,6 +437,25 @@ namespace Csharp_beginner_exercises
             }
 
             Console.WriteLine(count);
+        }
+
+        public static void longestWord()
+        {
+            string path = @"C:\Users\forsb\Desktop\Customers.txt";
+            var x = File.ReadAllText(path);
+
+           var words = x.Split(' ');
+
+            var longestword = "";
+
+            foreach (var item in words)
+            {
+                if (item.Length >= longestword.Length)
+                {
+                    longestword = item;
+                }
+            }
+            Console.WriteLine("Longest word is " + longestword);
         }
     }
 }
